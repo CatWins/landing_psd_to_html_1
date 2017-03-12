@@ -1,0 +1,14 @@
+
+@font-face {
+  font-family: 'Simplifica';
+  src: url('simplifica.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Simplifica';
+  src:  url('simplifica.woff') format('woff'), url('simplifica.ttf')  format('truetype'), url('simplifica.svg#simplifica') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
