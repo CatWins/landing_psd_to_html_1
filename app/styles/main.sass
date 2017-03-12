@@ -1,0 +1,732 @@
+@import "scaffold.sass"
+@import "grid.sass"
+@import "../../bower_components/font-awesome/scss/font-awesome.scss"
+@import "../fonts/lato/lato.css"
+@import "../fonts/raleway/raleway.css"
+@import "../fonts/rockwell/styles.css"
+@import "../fonts/simplifica/styles.css"
+
+$color-yellow: #ffe13e
+$color-yellow-text: #f4d320
+$color-blue: #202242
+$color-paleblue: #353754
+$color-white: #ffffff
+$color-grey: #fbf8f1
+
+$font-primary: Raleway, 'Helvetica Neue', Helvetica, Arial, sans-serif
+$font-secondary: Rockwell, 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+html
+  max-width: 1400px
+  margin: auto
+  background: #222
+  font-family: $font-primary
+  font-size: 16px
+
+body
+  margin: 0
+  background: $color-white
+
+body > *
+  padding: 0 7.2em
+
+header
+  height: 9.2em
+  display: flex
+  align-items: center
+  justify-content: space-between
+  > hr
+    opacity: .1
+    width: 1px
+    height: 100%
+    background-color: #000
+    border: none
+    margin: 0 2em 0 1em
+  .call-us
+    margin-top: .8em
+    font-weight: normal
+    text-align: right
+
+    .contacts
+      display: flex
+      align-items: center
+      justify-content: space-between
+      hr
+        opacity: .4
+        width: 1px
+        height: 2.1em
+        background-color: #000
+        border: none
+      span
+        font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif
+        font-size: 1.6em
+        font-weight: bold
+        letter-spacing: -.04em
+
+  a
+    float: left
+  > .header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    > a
+      line-height: .8em
+      margin-right: 1.8em
+  nav
+
+    margin-bottom: .3em
+
+    ul
+
+      list-style: none
+
+      li
+        margin: 0 1.2em
+        float: left
+        color: $color-blue
+        text-transform: uppercase
+
+    .toggle-menu
+      float: right
+      font-size: 2em
+      font-weight: bold
+      display: none
+
+    a
+      text-decoration: none
+      color: $color-blue
+      transition-property: color
+      transition-duration: .2s
+
+    a:hover
+      color: $color-yellow
+
+    .active
+      a
+        font-weight: bold
+        color: $color-yellow
+
+.small
+  font-size: .75em
+  font-weight: bolder
+  margin-bottom: 1.6em
+
+button
+  background-color: $color-yellow
+  border: none
+  outline: none
+  font-size: .9em
+  padding: .9em 2.1em
+  cursor: pointer
+  font-family: $font-primary
+  transition-property: color
+  transition-duration: .2s
+
+button:hover
+  color: $color-white
+
+.splash
+  height: 793px
+  background-image: url("../images/splash.png")
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+
+  h1,h2,h3,h4,h5,h6
+    text-align: center
+    color: $color-white
+
+  h1
+    font-family: $font-secondary
+    font-size: 2.9em
+    font-weight: normal
+    margin-top: 1.8em
+    letter-spacing: .01em
+    margin-bottom: 0
+
+  h2
+    margin-top: .8em
+    font-size: 2em
+    letter-spacing: .01em
+    font-weight: normal
+
+  img
+    display: block
+    margin: 3em auto
+
+  form
+    border: solid 1.2em transparentize($color-white, .5)
+    display: inline-flex
+    margin-top: .7em
+
+    *
+      outline: none
+
+    select
+      font-family: $font-primary
+      background-color: $color-yellow
+      padding: .94em 2.25em .94em 1.25em
+      font-weight: bolder
+      font-size: 1.2em
+      appearance: none
+      box-sizing: border-box
+      width: 100%
+      cursor: pointer
+      border: none
+
+    input
+      font-family: $font-primary
+      padding: 1em 4em 1em 1em
+      border: none
+      font-size: 1.1em
+
+    button
+      font-family: $font-primary
+      //color: $color-white
+      font-weight: bolder
+      font-size: .9em
+      padding: 0 1em
+
+.select-wrap
+  position: relative
+  border-width: 0 1px
+  border-color: $color-white
+  background-color: $color-yellow
+  border-style: solid
+
+.select-wrap::before
+  content: ">"
+  font-family: Simplifica, 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size: 2em
+  transform: rotate(90deg)
+  color: $color-white
+  display: inline-block
+  position: absolute
+  top: .5em
+  left: 2.65em
+  pointer-events: none
+
+.yellow
+  background-color: $color-yellow
+  color: $color-white
+  button:hover
+    color: $color-yellow
+
+.blue
+  background-color: $color-blue
+  color: $color-white
+  button
+    background-color: $color-blue
+  button:hover
+    color: $color-blue
+
+.table-wrap
+  display: inline-table
+
+.blue-header
+  display: table-cell
+  height: 173px
+  font-size: 8.5em
+  color: $color-blue
+  font-weight: bold
+  vertical-align: bottom
+
+
+
+
+.flex
+  display: flex
+  justify-content: center
+  align-items: stretch
+
+.services
+  > div
+    text-align: center
+    padding-top: 7em
+    padding-bottom: 6.5em
+  > div.blue
+    padding-left: 11em
+    padding-right: 5em
+  > div.yellow
+    padding-right: 11em
+    padding-left: 5em
+  h4
+    font-size: 2.3em
+    margin: 1.2em 0 0
+  button
+    margin-top: .5em
+    color: $color-white
+    border: solid .3em $color-white
+    padding: .7em 3em
+    font-size: 1.1em
+    font-weight: bolder
+    transition-property: background-color
+  button:hover
+    background-color: $color-white
+
+.features
+  position: relative
+  display: flex
+  flex-direction: column
+  text-align: center
+  padding-top: 4em
+  padding-bottom: 6em
+  background-color: $color-grey
+  font-family: $font-primary
+  > div
+    z-index: 1
+  h2
+    font-size: 3em
+    margin: .5em 0 0
+  h4
+    font-size: 1.5em
+    font-weight: normal
+    margin: .5em 0 2.8em
+  h3
+    font-size: 1.9em
+    margin: .7em 0
+    color: $color-yellow
+    font-family: $font-secondary
+    font-weight: normal
+  hr
+    width: 25%
+    opacity: .4
+    height: .2em
+    border: none
+    background-color: #000
+    margin: 2em auto 1em
+  p
+    font-size: .9em
+    line-height: 1.6em
+
+.features::after
+  content: ""
+  background: url("../images/shape_3.png") top no-repeat $color-grey
+  opacity: .03
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  position: absolute
+  z-index: 0
+
+.clients
+  padding-top: 4em
+  > div
+    display: flex
+    align-items: center
+    justify-content: center
+  h2
+    font-size: 2.2em
+    margin: 0
+  p
+    line-height: 1.5em
+    opacity: .4
+
+.callbacks
+  padding-top: 3em
+  .slider-wrap
+    display: flex
+    .cite
+      background-color: $color-grey
+      padding: 1.3em
+    .col
+      margin-bottom: 0
+  q
+    font-family: $font-secondary
+    opacity: .5
+    font-style: italic
+    font-size: .9em
+    line-height: 1.7em
+  .cite-author::before
+    content: "-"
+  .cite-author
+    margin-left: .5em
+    font-weight: bold
+    opacity: .8
+  img
+    float: right
+    width: 90px
+    height: 90px
+    position: relative
+    bottom: 65px
+    right: 25px
+    border: solid .5em #e2e1e5
+    border-radius: 50%
+
+.plans
+  padding-top: 2.7em
+  padding-bottom: 4em
+  background-color: $color-blue
+  > div
+    display: flex
+    align-items: center
+    justify-content: space-around
+    margin: 0 2.4em
+    > div
+      text-align: left
+      color: $color-white
+      h4
+        font-size: 2.2em
+        letter-spacing: .02em
+        margin-bottom: 0
+      h6
+        margin-top: .4em
+        font-size: 1.2em
+        opacity: .4
+        font-weight: lighter
+  button
+    margin-top: 1em
+    padding: 1.5em 2.3em
+    font-size: 1.2em
+    font-weight: bold
+    color: $color-blue
+    border: solid .3em $color-white
+  button:hover
+    color: $color-white
+
+.bottom
+  background-color: $color-paleblue
+  color: $color-white
+  padding-top: 6em
+  > .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+  .map
+    //height: 409px
+    position: relative
+    > img
+      width: 100%
+  .map-info
+    float: left
+    display: flex
+    align-items: center
+    font-weight: bold
+    position: absolute
+    bottom: 30%
+    left: 75.3%
+    span
+      position: relative
+      margin-left: .9em
+      line-height: 1.6em
+      font-size: 1.2em
+
+footer
+  color: $color-white
+  text-align: center
+  padding-bottom: 5em
+  padding-top: .5em
+  font-size: .9em
+  > *
+    margin-bottom: .8em
+
+.nav-bottom
+  a
+    color: $color-white
+    text-decoration: none
+    transition-property: color
+    transition-duration: .2s
+  a:hover
+    color: $color-yellow
+  nav
+    > div
+      font-size: 1.2em
+      font-weight: bold
+      margin-top: 1em
+      margin-bottom: 1.7em
+  text-align: right
+  ul
+    list-style: none
+  li
+    padding: .5em 0
+    //margin: .5em 0
+    border-width: 0 0 1px
+    border-color: transparentize($color-white, .8)
+    border-style: solid
+  li:last-child
+    border: none
+
+  hr
+    opacity: .2
+    height: 1px
+    border: none
+    background-color: $color-white
+    padding: 0 2em
+
+.social
+  padding: 1.5em 0 3.5em
+  a
+    color: $color-yellow
+    transition-property: color
+    transition-duration: .2s
+  a:hover
+    color: $color-white
+  .fa
+    font-size: 1.1em
+    margin: 0 .45em
+  .fa:last-child
+    margin-right: 0
+
+.back-to-top
+  font-size: .8em
+  margin-top: .5em
+
+@media screen and (max-width: 1399px)
+  html
+    font-size: 12px
+  body
+    > *
+      padding: 0 4em
+  header
+    padding-top: 4em
+    padding-bottom: 4em
+    flex-direction: column
+    height: auto
+    .header
+      display: block
+      width: 100%
+    .call-us
+      margin-top: 3em
+      width: 100%
+      display: flex
+      align-items: center
+      justify-content: space-between
+      .small
+        font-size: 1em
+        margin: 0
+        font-weight: normal
+      .contacts
+        span
+          font-size: 1em
+        button
+          font-size: 1em
+          padding: .6em 2em
+        hr
+          margin: 0 2em
+    nav
+      float: right
+      position: relative
+      display: inline-block
+      ul.menu-active
+        //display: none
+        opacity: 0
+        z-index: -1
+        margin-right: -2em
+      ul
+        width: 100%
+        min-width: 10em
+        position: absolute
+        top: -100%
+        right: 250%
+        padding: 0
+        background: $color-blue
+        z-index: 1
+        opacity: 1
+        margin-right: 0
+        transition-property: opacity, z-index, margin-right
+        transition-duration: .2s
+        li
+          width: 100%
+          padding: .8em 0
+          margin: 0
+          display: flex
+          justify-content: center
+          transition-property: background
+          transition-duration: .2s
+          a, a:hover
+            color: $color-white
+        li.active:hover
+          a
+            color: $color-white
+        li:hover
+          background: $color-yellow
+      ul:after
+        width: 0px
+        height: 0px
+        position: absolute
+        top: 0
+        right: -40%
+        content: ''
+        //transform: translate(0%, -100%)
+        border-color: transparent transparent transparent $color-blue
+        border-width: 2em
+        border-style: solid
+        z-index: -1
+
+      .toggle-menu
+        display: block
+        z-index: 1
+        position: relative
+
+
+  .splash
+    form
+      flex-direction: column
+      > button
+        padding: 1em 4em
+      > .select-wrap
+        background-color: $color-yellow
+        border-width: 1px 0
+        select
+          width: auto
+          padding: 1em 4em
+
+  .services
+    flex-direction: column
+    > div
+      width: auto
+    > div.blue
+      padding-left: 4em
+      padding-right: 4em
+    > div.yellow
+      padding-left: 4em
+      padding-right: 4em
+  .features
+    > div
+      > div
+        width: 100%
+  .features::after
+    background-repeat: repeat-y
+
+  .clients
+    > div
+      display: block
+      > div:first-child
+        width: 100%
+  .logo
+    display: block
+    width: 21%
+    margin: 2%
+    float: left
+
+  .plans
+    > div
+      flex-direction: column
+      margin: 0
+      > div
+        text-align: center
+
+  .bottom
+    .container
+      flex-direction: column
+
+    .map-info
+      bottom: 31.5%
+
+    nav
+      display: none
+
+    .social
+      font-size: 2em
+      text-align: center
+      padding: .5em
+
+    .back-to-top
+      font-size: 2em
+      text-align: center
+      padding: .5em
+
+    footer
+      padding: 1em
+
+  .callbacks
+    > div
+      display: block
+    img
+      width: 60px
+      height: 60px
+      bottom: 38px
+      right: 18px
+
+  .slider
+    z-index: 9
+    width: 100%
+    overflow: hidden
+    position: relative
+    .slider-wrap
+      padding: 0
+      margin: 0
+      float: left
+      display: block
+      transition-property: margin-left
+      transition-duration: .5s
+    .nav
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 1em
+    span
+      opacity: .9
+      background: $color-white
+      margin: 0 1em 0 0
+      width: 4em
+      height: 1em
+      cursor: pointer
+      overflow: hidden
+      display: block
+      float: left
+      border: solid 1px $color-blue
+    span:last-child
+      margin-right: 0
+    span.on
+      background: $color-yellow
+    .col
+      margin: 1% 1.6em 1% 0
+      text-align: center
+      .cite
+        text-align: left
+
+  .col
+    margin: 0
+
+@media screen and (max-width: 640px)
+  body
+    > header
+      padding: 2em 2em 0em 2em
+    > .splash
+      padding: 0
+  .services
+    > div.blue
+      padding-left: 0em
+      padding-right: 0em
+    > div.yellow
+      padding-left: 0em
+      padding-right: 0em
+  .tablet
+    display: none !important
+  .pc
+    display: none !important
+  .slider
+    span
+      width: 1em
+  .callbacks
+    padding: 0 2em
+    img
+      width: 45px
+      height: 45px
+      bottom: 32px
+      right: 12px
+  .plans
+    padding-left: 2em
+    padding-right: 2em
+  .call-us
+    flex-direction: column
+    .small
+      padding-bottom: 1em
+    margin-bottom: 3em
+
+  .bottom
+    padding-left: 0
+    padding-right: 0
+    .map-info
+      width: auto
+      flex-direction: row-reverse
+      left: auto
+      right: 19%
+    span
+      margin-left: 0
+      margin-right: .9em
+      text-align: right
