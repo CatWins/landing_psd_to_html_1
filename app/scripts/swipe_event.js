@@ -20,9 +20,9 @@ document.addEventListener('touchmove', function(e) {
   var direction = null;
 
   if (Math.abs(x_diff) > Math.abs(y_diff)) {
-    direction = (x_diff < 0) ? "left" : "right";
+    direction = (x_diff < 0) ? 'left' : 'right';
   } else {
-    direction = (y_diff > 0) ? "up" : "down";
+    direction = (y_diff > 0) ? 'up' : 'down';
   }
 
   fireSwipeEvent(target, direction);
@@ -33,9 +33,9 @@ document.addEventListener('touchmove', function(e) {
 });
 
 function fireSwipeEvent(target, direction) {
-  var swipe_event = new CustomEvent("swipe", {
+  var swipe_event = new CustomEvent('swipe', {
     detail: {
-      "direction": direction
+      'direction': direction
     },
     bubbles: true,
     cancelable: false
