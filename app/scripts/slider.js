@@ -35,11 +35,19 @@ function nextFrame(slider) {
   sliderJS(next, slider);
 }
 
+function previousFrame(slider) {
+  var current = $(slider).find(".on").attr("rel");
+  var max = $(slider).find(".nav").find("span").length;
+  var next = (+current - 1 >= 0) ? +current - 1 : max - 1;
+  $(slider).find("span").removeClass("on");
+  $(slider).find('span[rel="'+next+'"]').addClass("on");
+  sliderJS(next, slider);
+}
+
 function calcWidth(slider) {
   if ($(window).width() < 1399) {
     var w = Math.floor($(slider).width());
     var wm = Math.ceil($(slider).find(".col").width(w).outerWidth(true));
-    //console.log(w+' ||| '+wm);
     $(slider).find(".slider-wrap").width($(slider).find(".col").length * wm);
     var frame = $(slider).find(".on").attr("rel");
     sliderJS(frame, slider);
@@ -53,18 +61,26 @@ function calcWidth(slider) {
 }
 
 function sliderJS(obj, sl) {
-  //console.log(obj);
   var wrap = $(sl).find(".slider-wrap");
   var bl = $(sl).find(".col.slider"+obj);
   var step = $(bl).outerWidth(true);
   $(wrap).css("margin-left", -step*obj);
-  //animate({marginLeft: "-"+step*obj}, 500);
 }
+
 $(document).on("click", ".slider .nav span", function() {
   var sl = $(this).closest(".slider");
   $(sl).find("span").removeClass("on");
   $(this).addClass("on");
   var obj = $(this).attr("rel");
   sliderJS(obj, sl);
+  return false;
+});
+
+$(document).on("swipe", ".slider", function(e) {
+  if (e.originalEvent.detail.direction == "right") {
+    nextFrame(this);
+  } else if (e.originalEvent.detail.direction == "left") {
+    previousFrame(this);
+  }
   return false;
 });
